@@ -12,40 +12,49 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
       home: Scaffold(
       body: SafeArea(
-      child: Row(
-            children: [
-              Container(
-          
-                  padding: EdgeInsets.all(20),
-                  color: Colors.red,
+     child: Column(
+        children: [
+          _customContainer(
+           text: 'Darshan',
+           text1: 'Vaghasiya',
+          ),
+                Expanded(
+                    flex:8 ,
 
-                child : Text('1')
+                    child: Container(
+                    color: Colors.red,
 
+                    constraints: BoxConstraints.expand() ,
 
-              ),
-              Expanded(
-                flex: 2,
-                child: Container(
-                    padding: EdgeInsets.all(20),
-                    color: Colors.blue,
-                    child : Text('2')
+                    child: Center(
+                    child: Text('8',
+                      style: TextStyle(
+                      color: Colors.white,
+                      fontSize : 30
+                      ),
+                    ),
+                    ),
 
+                )),
+          Expanded(
+          flex:5 ,
+          child: Container(
+            color: Colors.indigo,
+
+            constraints: BoxConstraints.expand() ,
+            child: Center(
+              child: Text('5',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize : 30
                 ),
               ),
-              Expanded(
-                flex: 8,
-                child: Container(
-                    padding: EdgeInsets.all(20),
-                    color: Colors.green,
-                    child : Text('3')
+            ),
 
+          )),
+        ],
 
-                ),
-              ),
-            ],
-      ),
-
-
+     ),
       ),
       ),
       );
@@ -53,4 +62,10 @@ class MyApp extends StatelessWidget {
     return const Placeholder();
   }
 }
+Widget _customContainer({
+  required String text,
+  required String text1}){
+  return Text('${text} ${text1} ');
 
+
+}
